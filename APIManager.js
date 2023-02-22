@@ -29,27 +29,28 @@ class APIManager {
     }
     randomKanyeQuoteAPI(){
         return $.get('https://api.kanye.rest')
-                                    .then(quote => 
-                                        console.log(quote))
+                                    .then(quote => this.data.quote = quote)
     }
 
     pokeAPI(){
         return $.get('https://pokeapi.co/api/v2/pokemon/?limit=100')
                                                             .then( pokemons => {
                                                                 let randomNumber = Math.floor(Math.random() * 100)
-                                                                console.log(pokemons.results[randomNumber])
                                                                 return pokemons.results[randomNumber]
                                                             }
                                                             )
-                                                            .then(pokemon => {
-                                                                console.log(pokemon.url)
-                                                                return $.get(pokemon.url)
-                                                            })
-                                                            .then(data => console.log(data))    
+                                                            .then(pokemon => { return $.get(pokemon.url)})
+                                                            .then(pokemonData => {
+                                                                    this.data.pokemon = {}
+                                                                    let pokemon = this.data.pokemon
+                                                                    pokemon.name = pokemonData.name
+                                                                    pokemon.img = pokemonData.sprites.front_default
+                                                            })    
     }
 
-    baconipsumAPI(){
+    baconIpsumAPI(){
         return $.get('https://baconipsum.com/api/?type=all-meat&sentences=1')
+                                                                            .then(text => this.data.aboutUser = text)
 
     }
 

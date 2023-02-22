@@ -1,2 +1,6 @@
 const api = new APIManager()
 api.randomUserAPI()
+api.randomKanyeQuoteAPI()
+api.pokeAPI()
+api.baconIpsumAPI()
+console.log(api.data)
