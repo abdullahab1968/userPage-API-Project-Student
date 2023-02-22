@@ -17,13 +17,11 @@ class APIManager {
                                                         mainUser.state = users.results[0].location.state
                                                         mainUser.img = users.results[0].picture.large
                                                         mainUser.friends = []
+                                                        
                                                         for(let i=1; i < users.results.length; i++){
                                                             let friendName = users.results[i].name.last + ' ' + users.results[i].name.first 
                                                             mainUser.friends.push(friendName)
-
                                                         }
-
-
                                                     })
 
     }

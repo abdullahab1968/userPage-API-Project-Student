@@ -31,6 +31,12 @@
             <button>Display User</button>	
         </div>	
     </div>
+    <script id="user-template" type="text/x-handlebars-template">
+        <img src="{{img}}" id="profile-pic">
+        <p class="user-info">{{firstName}}<span></span>{{lastName}}</p>
+        <p class="user-info">{{city}}<span>, </span> {{state}}</p>
+    </script>
+    
     <script src="APIManager.js"></script>
     <script src="Renderer.js"></script>
     <script src="main.js"></script>
