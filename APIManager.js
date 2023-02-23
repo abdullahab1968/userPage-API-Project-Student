@@ -30,7 +30,11 @@ class APIManager {
     }
     randomKanyeQuoteAPI(){
         return $.get('https://api.kanye.rest')
-                                    .then(quote => this.data.quote = quote)
+                                    .then(quote => { 
+                                        this.data.quote = quote
+                                        const render = new Renderer(this.data.quote)
+                                        render.quoteRender()
+                                    })
     }
 
     pokeAPI(){
@@ -46,6 +50,8 @@ class APIManager {
                                                                     let pokemon = this.data.pokemon
                                                                     pokemon.name = pokemonData.name
                                                                     pokemon.img = pokemonData.sprites.front_default
+                                                                    const render = new Renderer(this.data.pokemon)
+                                                                    render.pokemonRender()
                                                             })    
     }
     // render(renderData){
@@ -55,7 +61,11 @@ class APIManager {
 
     baconIpsumAPI(){
         return $.get('https://baconipsum.com/api/?type=all-meat&sentences=1')
-                                                                            .then(text => this.data.aboutUser = text)
+                                                                            .then(text =>{
+                                                                                 this.data.aboutMeat = text
+                                                                                 const render = new Renderer(this.data.aboutMeat)
+                                                                                 render.aboutRender()
+                                                                                })
 
     }
 

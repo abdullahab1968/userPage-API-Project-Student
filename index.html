@@ -27,8 +27,8 @@
             </div>	
         </div>	
         <div class="buttons">	
-            <button>Load User Data</button>	
-            <button>Display User</button>	
+            <button>Generate User</button>	
+            
         </div>	
     </div>
 
@@ -44,6 +44,20 @@
               <li>{{this}}</li><br>
             {{/each}}
         </ul>
+    </script>
+
+    <script id="pokemon-template" type="text/x-handlebars-template">
+        <img src="{{img}}">
+        <h4 id="pokemon-text">Favorite Pockemon: {{name}}</h4>
+    </script>
+
+    <script id="quote-template" type="text/x-handlebars-template">
+        <h2>Favorite quote</h2>
+        <h4>" {{quote}} "</h4>
+    </script>
+    <script id="about-template" type="text/x-handlebars-template">
+        <h4>About me</h4>
+        <p>{{this}}</p>
     </script>
     
     <script src="APIManager.js"></script>
