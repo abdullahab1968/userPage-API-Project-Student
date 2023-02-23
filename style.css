@@ -30,7 +30,7 @@ body {
 .user-info {
     color: #ecf0f1;
     display: inline-block;
-    vertical-align: middle;
+    vertical-align: right;
 }
 
 #profile-pic {

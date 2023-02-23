@@ -22,7 +22,7 @@
             <div class="meat-container"></div>	
         </div>	
         <div class="friends">	
-            <h4>Friends</h4>	
+            <h4>Friends</h4><br>	
             <div class="friends-container">	
             </div>	
         </div>	
@@ -31,10 +31,19 @@
             <button>Display User</button>	
         </div>	
     </div>
+
     <script id="user-template" type="text/x-handlebars-template">
         <img src="{{img}}" id="profile-pic">
-        <p class="user-info">{{firstName}}<span> </span>{{lastName}}</p>
+        <p class="user-info">{{firstName}}<span> </span>{{lastName}}</p><br>
         <p class="user-info">{{city}}<span>, </span> {{state}}</p>
+    </script>
+
+    <script id="friends-template" type="text/x-handlebars-template">
+        <ul>
+            {{#each friends}}
+              <li>{{this}}</li><br>
+            {{/each}}
+        </ul>
     </script>
     
     <script src="APIManager.js"></script>

@@ -3,11 +3,15 @@ class Renderer {
     this.dataToShow = data
   }
   userRender(){
-    const source = $('#user-template').html()
-    const template = Handlebars.compile(source)
-
-    const newHTML = template(this.dataToShow)
+    let source = $('#user-template').html()
+    let template = Handlebars.compile(source)
+    let newHTML = template(this.dataToShow)
     $('.user-container').append(newHTML)
+    
+    source = $('#friends-template').html()
+    template = Handlebars.compile(source)
+    newHTML = template(this.dataToShow)
+    $('.friends-container').append(newHTML)
   }
 
 }
