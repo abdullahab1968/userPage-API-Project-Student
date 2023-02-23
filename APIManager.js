@@ -22,6 +22,9 @@ class APIManager {
                                                             let friendName = users.results[i].name.last + ' ' + users.results[i].name.first 
                                                             mainUser.friends.push(friendName)
                                                         }
+                                                        const render = new Renderer(this.data.mainUser)
+                                                        render.userRender()
+
                                                     })
 
     }
@@ -45,6 +48,10 @@ class APIManager {
                                                                     pokemon.img = pokemonData.sprites.front_default
                                                             })    
     }
+    // render(renderData){
+    //     const render = new Renderer(this.data)
+    //     render
+    // }
 
     baconIpsumAPI(){
         return $.get('https://baconipsum.com/api/?type=all-meat&sentences=1')
