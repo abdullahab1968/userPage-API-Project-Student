@@ -54,10 +54,7 @@ class APIManager {
                                                                     render.pokemonRender()
                                                             })    
     }
-    // render(renderData){
-    //     const render = new Renderer(this.data)
-    //     render
-    // }
+   
 
     baconIpsumAPI(){
         return $.get('https://baconipsum.com/api/?type=all-meat&sentences=1')
@@ -66,7 +63,6 @@ class APIManager {
                                                                                  const render = new Renderer(this.data.aboutMeat)
                                                                                  render.aboutRender()
                                                                                 })
-
     }
 
 }

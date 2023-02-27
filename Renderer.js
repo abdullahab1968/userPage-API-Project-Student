@@ -3,42 +3,25 @@ class Renderer {
     this.dataToShow = data
   }
   userRender(){
-    let source = $('#user-template').html()
-    let template = Handlebars.compile(source)
-    let newHTML = template(this.dataToShow)
-    $('.user-container').append(newHTML)
-
-    source = $('#friends-template').html()
-    template = Handlebars.compile(source)
-    newHTML = template(this.dataToShow)
-    $('.friends-container').append(newHTML)
+    this.renderTemplateScripts('#user-template', '.user-container')
+    this.renderTemplateScripts('#friends-template', '.friends-container')
   }
+
   quoteRender(){
-    const source = $('#quote-template').html()
-    const template = Handlebars.compile(source)
-    const newHTML = template(this.dataToShow)
-    $('.quote-container').append(newHTML)
+    this.renderTemplateScripts('#quote-template', '.quote-container')
   }
 
   pokemonRender(){
-    const source = $('#pokemon-template').html()
-    const template = Handlebars.compile(source)
-    const newHTML = template(this.dataToShow)
-    $('.pokemon-container').append(newHTML)
-    
+    this.renderTemplateScripts('#pokemon-template', '.pokemon-container')
   }
-
-
-
-
-
 
   aboutRender(){
-    const source = $('#about-template').html()
+    this.renderTemplateScripts('#about-template', '.meat-container')
+  }
+  renderTemplateScripts(scriptID, divToAppend){
+    const source = $(scriptID).html()
     const template =  Handlebars.compile(source)
     const newHTML = template(this.dataToShow)
-    $('.meat-container').append(newHTML)
-
+    $(divToAppend).append(newHTML)
   }
-
 }
